@@ -1,9 +1,6 @@
 from smbuilder import includescanner
 from smbuilder import util
 
-import fileinput
-import fnmatch
-import glob
 import os
 import shutil
 import subprocess
@@ -185,7 +182,7 @@ def replace_args(package, package_dir, packages, plugins):
     """Performs replacement of template arguments within a directory for a package."""
     template_args = get_template_args(package, packages, plugins)
 
-    for root, dirs, files in os.walk(package_dir):
+    for root, _, files in os.walk(package_dir):
         for file in files:
             path = os.path.join(root, file)
             text_extensions = ['.cfg', '.ini', '.txt']
