@@ -1,5 +1,5 @@
-import base
-import util
+from smbuilder import base
+from smbuilder import util
 
 import fnmatch
 import glob

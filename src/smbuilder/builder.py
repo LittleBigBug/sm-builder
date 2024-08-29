@@ -1,6 +1,6 @@
-import base
-import parser
-import util
+from smbuilder import base
+from smbuilder import parser
+from smbuilder import util
 
 import os
 

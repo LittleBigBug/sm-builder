@@ -1,4 +1,4 @@
-import util
+from smbuilder import util
 
 import os
 

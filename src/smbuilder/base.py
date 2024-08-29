@@ -1,5 +1,5 @@
-import includescanner
-import util
+from smbuilder import includescanner
+from smbuilder import util
 
 import fileinput
 import fnmatch

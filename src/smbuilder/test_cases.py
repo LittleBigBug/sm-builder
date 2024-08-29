@@ -1,7 +1,7 @@
-import base
-import builder
-import parser
-import structbuilder
+from smbuilder import base
+from smbuilder import builder
+from smbuilder import parser
+from smbuilder import structbuilder
 
 import os
 import unittest
