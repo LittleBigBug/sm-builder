@@ -13,25 +13,25 @@ def get_field_default_value(type):
 
 
 class StructMember:
-    def __init__(this, structname, name, type, is_array=False, array_size=1):
-        this.name = name
-        this.type = type
-        this.is_array = is_array
-        this.array_size = array_size
+    def __init__(self, structname, name, type, is_array=False, array_size=1):
+        self.name = name
+        self.type = type
+        self.is_array = is_array
+        self.array_size = array_size
 
         if array_size <= 0:
             msg = 'Illegal array size for {}.{}'.format(structname, name)
             raise ValueError(msg)
 
-        # some function/variable names to use for this struct eleement
-        this.function_suffix = name[0].upper()
+        # some function/variable names to use for self struct eleement
+        self.function_suffix = name[0].upper()
         for letter in name[1:]:
-            this.function_suffix += letter
+            self.function_suffix += letter
 
-        this.setter_function_name = '{}_Set{}'.format(structname, this.function_suffix)
-        this.getter_function_name = '{}_Get{}'.format(structname, this.function_suffix)
-        this.setter_method_name = 'Set{}'.format(this.function_suffix)
-        this.getter_method_name = 'Get{}'.format(this.function_suffix)
+        self.setter_function_name = '{}_Set{}'.format(structname, self.function_suffix)
+        self.getter_function_name = '{}_Get{}'.format(structname, self.function_suffix)
+        self.setter_method_name = 'Set{}'.format(self.function_suffix)
+        self.getter_method_name = 'Get{}'.format(self.function_suffix)
 
     @staticmethod
     def from_keyvalue(structname, name, fieldtype):
@@ -158,25 +158,25 @@ def create_struct_functions(name, elems):
         if e.is_array:
             # getter
             lines.append('\tpublic void {}({} buffer[{}]) {{'.format(e.getter_method_name, e.type, e.array_size))
-            lines.append('\t\t{}(this, buffer);'.format(e.getter_function_name))
+            lines.append('\t\t{}(self, buffer);'.format(e.getter_function_name))
             lines.append('\t}')
             lines.append('')
 
             if e.type != 'string':
                 lines.append('\tpublic {} {}At(int index) {{'.format(e.type, e.getter_method_name, e.type, e.array_size))
-                lines.append('\t\treturn {}At(this, index);'.format(e.getter_function_name))
+                lines.append('\t\treturn {}At(self, index);'.format(e.getter_function_name))
                 lines.append('\t}')
                 lines.append('')
 
             # setter
             lines.append('\tpublic void {}(const {} value[{}]) {{'.format(e.setter_method_name, e.type, e.array_size))
-            lines.append('\t\t{}(this, value);'.format(e.setter_function_name))
+            lines.append('\t\t{}(self, value);'.format(e.setter_function_name))
             lines.append('\t}')
             lines.append('')
 
             if e.type != 'string':
                 lines.append('\tpublic void {}At({} value, int index) {{'.format(e.setter_method_name, e.type, e.array_size))
-                lines.append('\t\t{}At(this, value, index);'.format(e.setter_function_name))
+                lines.append('\t\t{}At(self, value, index);'.format(e.setter_function_name))
                 lines.append('\t}')
                 lines.append('')
 
@@ -184,13 +184,13 @@ def create_struct_functions(name, elems):
         else:
             # getter
             lines.append('\tpublic {} {}() {{'.format(e.type, e.getter_method_name))
-            lines.append('\t\treturn {}(this);'.format(e.getter_function_name))
+            lines.append('\t\treturn {}(self);'.format(e.getter_function_name))
             lines.append('\t}')
             lines.append('')
 
             # setter
             lines.append('\tpublic void {}({} x_) {{'.format(e.setter_method_name, e.type))
-            lines.append('\t\t{}(this, x_);'.format(e.setter_function_name))
+            lines.append('\t\t{}(self, x_);'.format(e.setter_function_name))
             lines.append('\t}')
             lines.append('')
 
