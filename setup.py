@@ -1,6 +1,6 @@
-from distutils.core import setup
+import setuptools
 
-setup(
+setuptools.setup(
     name='smbuilder',
     version='0.0.1',
     description='',
@@ -11,5 +11,4 @@ setup(
     packages=['smbuilder'],
     package_dir={'smbuilder': 'src/smbuilder'},
     package_data={'smbuilder': ['plugins/*.sp', 'plugins/smbuild']},
-    requirements=['jinja2', 'appdirs'],
 )
