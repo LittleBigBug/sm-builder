@@ -5,7 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "smbuilder"
 version = "0.0.1"
+description = ""
+authors = [
+  {name = "Sean Lewis", email = "splewis@utexas.edu"},
+]
 dependencies = [
   "Jinja2==3.1.4",
   "appdirs==1.4.0",
 ]
+
+[tool.setuptools.packages.find]
+where = ["src"]
