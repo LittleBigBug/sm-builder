@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/splewis/sm-builder.svg?branch=master)](https://travis-ci.org/splewis/sm-builder)
 
-**This is still very much a work in progress. Don't try to use it unless you want to contribute to its development. Currently, this only targets python2 and unix-like systems**
+**This is still very much a work in progress. Don't try to use it unless you want to contribute to its development. Currently, this only targets unix-like systems**
 
 **smbuilder** is a build/package tool for managing SourceMod plugins and servers. It works as a command-line tool that:
 - reads a configuration file
@@ -64,12 +64,8 @@ This will produce the output package, which will live in ``builds/pugsetup-serve
 ## Installing a development version
 For a unix-style system, you should run:
 
-1. Clone the repository: ``git clone https://github.com/splewis/sm-builder``
-1. Move into the repo: ``cd sm-builder``
-1. Install [pip](http://pip.readthedocs.org/en/latest/installing.html) for managing the python dependencies: ``sudo apt-get install python-pip`` for debian and ubuntu
-1. Install python dependencies if needed: ``sudo pip install -r requirements.txt``
-1. Install smbuiler: ``sudo python setup.py install``
-1. You're done! You can now invoke ``smbuilder`` on the command line.
+* Install smbuilder: ``pipx install <PATH/TO/SMBUILDER>``
+* You're done! You can now invoke ``smbuilder`` on the command line.
 
 You may still need to configure a SourcePawn compiler, so read on below for how to do that.
 
