@@ -137,11 +137,11 @@ stock void MyStruct_SetDAt(Handle mystruct_, int value, int index) {
 
 methodmap MyStruct < Handle {
     public int GetA() {
-        return MyStruct_GetA(this);
+        return MyStruct_GetA(self);
     }
 
     public void SetA(int x_) {
-        MyStruct_SetA(this, x_);
+        MyStruct_SetA(self, x_);
     }
 
     property int a {
@@ -150,11 +150,11 @@ methodmap MyStruct < Handle {
     }
 
     public float GetB() {
-        return MyStruct_GetB(this);
+        return MyStruct_GetB(self);
     }
 
     public void SetB(float x_) {
-        MyStruct_SetB(this, x_);
+        MyStruct_SetB(self, x_);
     }
 
     property float b {
@@ -163,11 +163,11 @@ methodmap MyStruct < Handle {
     }
 
     public char GetCamelCase() {
-        return MyStruct_GetCamelCase(this);
+        return MyStruct_GetCamelCase(self);
     }
 
     public void SetCamelCase(char x_) {
-        MyStruct_SetCamelCase(this, x_);
+        MyStruct_SetCamelCase(self, x_);
     }
 
     property char camelCase {
@@ -176,19 +176,19 @@ methodmap MyStruct < Handle {
     }
 
     public void GetD(int buffer[4]) {
-        MyStruct_GetD(this, buffer);
+        MyStruct_GetD(self, buffer);
     }
 
     public int GetDAt(int index) {
-        return MyStruct_GetDAt(this, index);
+        return MyStruct_GetDAt(self, index);
     }
 
     public void SetD(const int value[4]) {
-        MyStruct_SetD(this, value);
+        MyStruct_SetD(self, value);
     }
 
     public void SetDAt(int value, int index) {
-        MyStruct_SetDAt(this, value, index);
+        MyStruct_SetDAt(self, value, index);
     }
 
 }""")
