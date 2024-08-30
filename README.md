@@ -92,9 +92,11 @@ Settings written to /home/splewis/.config/smbuilder.ini
 You can also set things from command line flags (these overrule the config file settings):
 - ``--compiler (-c)`` specifies a sourcepawn compiler to use (default: ``spcomp``)
 
-You may want to add the path of of your sourcemod compiler to the system path, something like:
-``PATH+=":/home/splewis/sm/addons/sourcemod/scripting"``
-
+Currently, it is best to update `~/.config/smbuilder.ini`'s `compiler`
+flag to point to the absolute path of `spcomp`. It may not be able to
+find `sourcemod` files to include otherwise. Ideally, having `spcomp`
+be available through `PATH` environement variable would be the way to
+handle it but that doesn't work still.
 
 ## Examples
 Examples from smbuilder's testing:
