@@ -1,10 +1,14 @@
+.idea
 MANIFEST
 build
 builds
 src/plugins/builds
 src/smbuilder/testpackages/test_package/builds
 src/smbuilder/testpackages/test_package2/builds
+venv
 dist
+install
 *.smx
 *.zip
 *.pyc
+*.egg-info
